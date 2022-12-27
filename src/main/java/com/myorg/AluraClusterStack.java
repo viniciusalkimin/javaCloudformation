@@ -2,21 +2,21 @@ package com.myorg;
 
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
+import software.amazon.awscdk.services.ec2.Vpc;
+import software.amazon.awscdk.services.ecs.Cluster;
 import software.constructs.Construct;
 
 public class AluraClusterStack extends Stack {
-    public AluraClusterStack(final Construct scope, final String id) {
-        this(scope, id, null);
+    public AluraClusterStack(final Construct scope, final String id, final Vpc vpc) {
+        this(scope, id, null, vpc);
     }
 
-    public AluraClusterStack(final Construct scope, final String id, final StackProps props) {
+    public AluraClusterStack(final Construct scope, final String id, final StackProps props, final Vpc vpc) {
         super(scope, id, props);
 
-        // The code that defines your stack goes here
-
-        // example resource
-        // final Queue queue = Queue.Builder.create(this, "AluraAwsInfraQueue")
-        //         .visibilityTimeout(Duration.seconds(300))
-        //         .build();
+        Cluster cluster = Cluster.Builder.create(this, "MyCluster")
+                .clusterName("ClusterForAluraApplication")
+                .vpc(vpc)
+                .build();
     }
 }

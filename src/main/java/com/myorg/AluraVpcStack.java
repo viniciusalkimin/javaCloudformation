@@ -6,6 +6,8 @@ import software.amazon.awscdk.services.ec2.Vpc;
 import software.constructs.Construct;
 
 public class AluraVpcStack extends Stack {
+    private Vpc vpc;
+
     public AluraVpcStack(final Construct scope, final String id) {
         this(scope, id, null);
     }
@@ -16,5 +18,9 @@ public class AluraVpcStack extends Stack {
         Vpc vpc = Vpc.Builder.create(this, "MyVpc")
                 .maxAzs(3)  // Default is all AZs in region
                 .build();
+    }
+
+    public Vpc getVpc() {
+        return vpc;
     }
 }
