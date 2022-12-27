@@ -10,6 +10,8 @@ public class AluraClusterStack extends Stack {
     public AluraClusterStack(final Construct scope, final String id, final Vpc vpc) {
         this(scope, id, null, vpc);
     }
+    private Cluster cluster;
+
 
     public AluraClusterStack(final Construct scope, final String id, final StackProps props, final Vpc vpc) {
         super(scope, id, props);
@@ -18,5 +20,9 @@ public class AluraClusterStack extends Stack {
                 .clusterName("ClusterForAluraApplication")
                 .vpc(vpc)
                 .build();
+    }
+
+    public Cluster getCluster() {
+        return cluster;
     }
 }
