@@ -4,12 +4,12 @@ import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
 import software.constructs.Construct;
 
-public class AluraAwsInfraStack extends Stack {
-    public AluraAwsInfraStack(final Construct scope, final String id) {
+public class AluraClusterStack extends Stack {
+    public AluraClusterStack(final Construct scope, final String id) {
         this(scope, id, null);
     }
 
-    public AluraAwsInfraStack(final Construct scope, final String id, final StackProps props) {
+    public AluraClusterStack(final Construct scope, final String id, final StackProps props) {
         super(scope, id, props);
 
         // The code that defines your stack goes here
