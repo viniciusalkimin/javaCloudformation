@@ -15,7 +15,7 @@ public class AluraVpcStack extends Stack {
     public AluraVpcStack(final Construct scope, final String id, final StackProps props) {
         super(scope, id, props);
 
-        Vpc vpc = Vpc.Builder.create(this, "MyVpc")
+        vpc = Vpc.Builder.create(this, "MyVpc")
                 .maxAzs(3)  // Default is all AZs in region
                 .build();
     }
