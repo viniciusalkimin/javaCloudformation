@@ -16,8 +16,8 @@ public class AluraClusterStack extends Stack {
     public AluraClusterStack(final Construct scope, final String id, final StackProps props, final Vpc vpc) {
         super(scope, id, props);
 
-        Cluster cluster = Cluster.Builder.create(this, "MyCluster")
-                .clusterName("ClusterForAluraApplication")
+        cluster = Cluster.Builder.create(this, "MyCluster")
+                .clusterName("cluster-alura")
                 .vpc(vpc)
                 .build();
     }
